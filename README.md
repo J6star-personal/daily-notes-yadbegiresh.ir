@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# پروژه ثبت کار و تایم‌لاین (Cloudflare Workers)
 
-# Run and deploy your AI Studio app
+این پروژه یک سیستم ساده، سریع و مدرن برای ثبت یادداشت‌ها و کارها است که با استفاده از **Cloudflare Workers** و **Cloudflare KV** پیاده‌سازی شده است.
 
-This contains everything you need to run your app locally.
+## ویژگی‌ها
+* **ظاهر مدرن:** استفاده از طراحی کارت‌مانند و رابط کاربری فارسی‌زبان (RTL).
+* **بدون نیاز به دیتابیس خارجی:** استفاده از سرویس Cloudflare KV برای ذخیره‌سازی داده‌ها.
+* **پنل مدیریت:** قابلیت حذف مطالب با استفاده از رمز عبور (Admin Authentication).
+* **جستجوی آنی:** امکان جستجو در مطالب ثبت شده.
+* **سبک و پرسرعت:** بهینه‌شده برای اجرا روی لبه شبکه (Edge Computing).
 
-View your app in AI Studio: https://ai.studio/apps/3f2bf80e-4162-4846-8d28-33019800e430
+## پیش‌نیازها
+برای اجرای این پروژه، به موارد زیر در پنل کلودفلر نیاز دارید:
+1.  یک **KV Namespace** با نام `TODO_KV` بسازید و به Worker خود متصل (Bind) کنید.
+2.  یک **Environment Variable** با نام `ADMIN_PASSWORD` در بخش Variables تعریف کنید تا رمز عبور مدیریت تنظیم شود.
 
-## Run Locally
+## نحوه نصب و اجرا
+1.  کد فایل `index.js` را در بخش Worker خود قرار دهید.
+2.  مطمئن شوید که `Bindings` ذکر شده در بالا به درستی متصل شده‌اند.
+3.  پروژه را Deploy کنید.
 
-**Prerequisites:**  Node.js
+## استفاده
+* **صفحه اصلی:** جهت ثبت یادداشت جدید.
+* **صفحه تایم‌لاین (`/timeline`):** جهت مشاهده تمام مطالب، جستجو و در صورت ورود با رمز عبور، حذف مطالب.
 
+## تکنولوژی‌های استفاده شده
+* **Cloudflare Workers:** برای اجرای بک‌اند.
+* **Cloudflare KV:** جهت ذخیره‌سازی داده‌ها.
+* **Vazirmatn Font:** برای نمایش زیباتر متون فارسی.
+* **Vanilla JS & CSS:** برای طراحی رابط کاربری بدون استفاده از کتابخانه‌های سنگین.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+ساخته شده با ❤️ برای مدیریت بهتر کارها.
